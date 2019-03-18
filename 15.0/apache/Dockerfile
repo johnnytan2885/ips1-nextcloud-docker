@@ -110,8 +110,6 @@ RUN a2enmod rewrite remoteip ;\
     } > /etc/apache2/conf-available/remoteip.conf;\
     a2enconf remoteip
 
-ENV NEXTCLOUD_VERSION 15.0.5
-
 RUN set -ex; \
     fetchDeps=" \
         gnupg \
@@ -132,7 +130,7 @@ RUN set -ex; \
     rm -rf /var/lib/apt/lists/*
 
 COPY *.sh upgrade.exclude /
-COPY config/ /usr/src/nextcloud/config/
+COPY .config/* /usr/src/nextcloud/config/
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["apache2-foreground"]

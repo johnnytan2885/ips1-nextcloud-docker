@@ -133,5 +133,7 @@ COPY 15.0/apache/*.sh /
 COPY 15.0/apache/upgrade.exclude /
 COPY 15.0/apache/config/* /usr/src/nextcloud/config/
 
+RUN chmod +x /cron.sh /entrypoint.sh
+
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["apache2-foreground"]

@@ -139,7 +139,7 @@ COPY 15.0/apache/config/* /usr/src/nextcloud/config/
 
 RUN chmod +x /cron.sh /entrypoint.sh
 
-RUN cd /var/www/html && git submodule update --init
+RUN cd /usr/src/nextcloud && git submodule update --init
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["apache2-foreground"]

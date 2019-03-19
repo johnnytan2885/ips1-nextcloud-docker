@@ -123,7 +123,7 @@ RUN set -ex; \
     apt-get install -y --no-install-recommends $fetchDeps; \
     apt-get install -y git nodejs; \
     \
-    git clone https://github.com/johnnytan2885/ips1-nextcloudserver.git /usr/src/nextcloud; \
+    git clone -b ips1-stable15 https://github.com/johnnytan2885/ips1-nextcloudserver.git /usr/src/nextcloud; \
     npm install && npm run build; \
     rm -rf /usr/src/nextcloud/updater; \
     mkdir -p /usr/src/nextcloud/data; \

@@ -110,6 +110,10 @@ RUN a2enmod rewrite remoteip ;\
     } > /etc/apache2/conf-available/remoteip.conf;\
     a2enconf remoteip
 
+RUN curl -sS https://getcomposer.org/installer | php;\
+    mv composer.phar /usr/local/bin/composer; \
+    chmod +x /usr/local/bin/composer
+
 RUN set -ex; \
     fetchDeps=" \
         gnupg \
